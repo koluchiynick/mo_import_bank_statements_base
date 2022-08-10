@@ -1,0 +1,173 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mo_import_bank_statements_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-08 14:02+0000\n"
+"PO-Revision-Date: 2022-08-08 14:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model,name:mo_import_bank_statements_base.model_account_statement_import_file_format
+msgid "Bank Statement Import file format"
+msgstr ""
+
+#. module: mo_import_bank_statements_base
+#: model_terms:ir.ui.view,arch_db:mo_import_bank_statements_base.account_bank_statement_import_form
+msgid "Cancel"
+msgstr "Відмінити"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__create_uid
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format__create_uid
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_csv__create_uid
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_dbf__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__create_date
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format__create_date
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_csv__create_date
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_dbf__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_journal__default_file_format_id
+msgid "Default File Format"
+msgstr "Формат файла за замовченням"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__display_name
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format__display_name
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_csv__display_name
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_dbf__display_name
+msgid "Display Name"
+msgstr "Ім'я"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__file_format_id
+msgid "File format"
+msgstr "Формат файлу"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__id
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format__id
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_csv__id
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_dbf__id
+msgid "ID"
+msgstr "Ід"
+
+#. module: mo_import_bank_statements_base
+#: model_terms:ir.ui.view,arch_db:mo_import_bank_statements_base.account_bank_statement_import_form
+#: model_terms:ir.ui.view,arch_db:mo_import_bank_statements_base.journal_dashboard_view_inherit
+msgid "Import"
+msgstr "Імпорт"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.actions.act_window,name:mo_import_bank_statements_base.account_bank_statement_import_action
+msgid "Import Bank Statement File"
+msgstr "Імпорт банківської виписки з файлу"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__import_file
+msgid "Import File"
+msgstr "Файл імпорту"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__import_filename
+msgid "Import Filename"
+msgstr "Ім'я файлу імпорту"
+
+#. module: mo_import_bank_statements_base
+#: model_terms:ir.ui.view,arch_db:mo_import_bank_statements_base.journal_dashboard_view_inherit
+msgid "Import Statement"
+msgstr "Імпорт виписки"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model,name:mo_import_bank_statements_base.model_account_statement_import_pumb_dbf
+msgid "Import bank statements PUMB DBF file format"
+msgstr "Імпорт банківської виписки формат файлу ПУМБ dbf"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model,name:mo_import_bank_statements_base.model_account_statement_import_pumb_csv
+msgid "Import bank statements PUMB csv file format"
+msgstr "Імпорт банківської виписки формат файлу ПУМБ csv"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model,name:mo_import_bank_statements_base.model_account_bank_statement_import
+msgid "Import bank statements from a file"
+msgstr "Імпорт банківської виписки з файлу"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model,name:mo_import_bank_statements_base.model_account_journal
+msgid "Journal"
+msgstr "Журнал"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import____last_update
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format____last_update
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_csv____last_update
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_dbf____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__write_uid
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format__write_uid
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_csv__write_uid
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_dbf__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_bank_statement_import__write_date
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format__write_date
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_csv__write_date
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_pumb_dbf__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format__name
+msgid "Name"
+msgstr "Ім'я"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,field_description:mo_import_bank_statements_base.field_account_statement_import_file_format__parser_model_name
+msgid "Parser Model Name"
+msgstr ""
+
+#. module: mo_import_bank_statements_base
+#: model_terms:ir.ui.view,arch_db:mo_import_bank_statements_base.account_bank_statement_import_form
+msgid "Select format file:"
+msgstr "Виберіть формат файлу"
+
+#. module: mo_import_bank_statements_base
+#: model_terms:ir.ui.view,arch_db:mo_import_bank_statements_base.account_bank_statement_import_form
+msgid "Upload Bank Statements"
+msgstr "Оновити банківську виписку"
+
+#. module: mo_import_bank_statements_base
+#: model_terms:ir.ui.view,arch_db:mo_import_bank_statements_base.account_bank_statement_import_form
+msgid "Upload a bank statement file"
+msgstr "Завантажити файл банківської виписки"
+
+#. module: mo_import_bank_statements_base
+#: model:ir.model.fields,help:mo_import_bank_statements_base.field_account_bank_statement_import__import_file
+msgid "Wrap the file imported from your bank"
+msgstr "Оберіть файл імпортований з вашого клієнт банку"
+
+#. module: mo_import_bank_statements_base
+#: model_terms:ir.ui.view,arch_db:mo_import_bank_statements_base.journal_dashboard_view_inherit
+msgid "or"
+msgstr "або"

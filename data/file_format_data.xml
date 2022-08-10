@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pumb_csv_file_format" model="account.statement.import.file.format">
+        <field name="name">PUMB csv</field>
+        <field name="parser_model_name">account.statement.import.pumb.csv</field>
+    </record>
+
+    <record id="pumb_dbf_file_format" model="account.statement.import.file.format">
+        <field name="name">PUMB dbf</field>
+        <field name="parser_model_name">account.statement.import.pumb.dbf</field>
+    </record>
+
+</odoo>
