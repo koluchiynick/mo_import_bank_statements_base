@@ -16,27 +16,29 @@ except ImportError:
 class AccountStatementImportPumbCsv(models.TransientModel):
     _name = "account.statement.import.pumb.csv"
     _description = "Import bank statements PUMB csv file format"
-    
+
     def get_partner(self, edrpou_partner, name_partner):
         try:
-            partner = self.env['res.partner'].search([('mo_edrpou', '=', edrpou_partner)])
+            partner = self.env['res.partner'].search([('mo_edrpou', '=',
+                                                       edrpou_partner)])
         except:
             partner = False
-        
+
         if partner:
             return partner.id
-        
+
         partner = self.env['res.partner'].search([('vat', '=', name_partner)])
         if partner:
             return partner.id
-        
+
         partner = self.env['res.partner'].search([('name', '=', name_partner)])
         return partner.id if partner else False
-    
+
     def parse(self, import_file, import_filename):
-        journal = self.env["account.journal"].browse(self.env.context.get("journal_id"))
+        journal = self.env["account.journal"].browse(
+            self.env.context.get("journal_id"))
         journal_acc_number = journal.bank_account_id.acc_number
-        
+
         if import_filename.lower().strip().endswith('.csv'):
             statement = False
             try:
@@ -46,22 +48,27 @@ class AccountStatementImportPumbCsv(models.TransientModel):
                 csv_reader = csv.DictReader(csv_data, delimiter=';')
                 file_reader = []
                 file_reader.extend(csv_reader)
-                
+
             except:
                 raise UserError(("Invalid file!"))
-            
+
             vals_list = []
             for row in file_reader:
                 values = {}
                 if journal_acc_number == row['ACC_NUMB']:
-                    amount = row["CR"] if row["DB"] == '' else '-'+row["DB"]
+                    amount = row["CR"] if row["DB"] == '' else '-' + row["DB"]
                     values.update({
-                        'date': row["DOC_DATE"].replace('.','-'),
-                        'payment_ref': row["DESCRIPT"].strip(),
-                        'partner_id': self.get_partner(row["KOR_OKPO"].strip(),row["KOR_NAME"].strip()),
-                        'amount': amount,
+                        'date':
+                        row["DOC_DATE"].replace('.', '-'),
+                        'payment_ref':
+                        row["DESCRIPT"].strip(),
+                        'partner_id':
+                        self.get_partner(row["KOR_OKPO"].strip(),
+                                         row["KOR_NAME"].strip()),
+                        'amount':
+                        amount,
                     })
                     vals_list.append((0, 0, values))
-            return vals_list            
+            return vals_list
         else:
             raise ValidationError(("Unsupported File Type"))

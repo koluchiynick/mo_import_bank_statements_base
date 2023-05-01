@@ -2,7 +2,6 @@ import logging
 import tempfile
 import binascii
 
-
 from odoo import models
 from odoo.exceptions import UserError, ValidationError
 
@@ -17,27 +16,29 @@ except ImportError:
 class AccountStatementImportPumbDbf(models.TransientModel):
     _name = "account.statement.import.pumb.dbf"
     _description = "Import bank statements PUMB DBF file format"
-    
+
     def get_partner(self, edrpou_partner, name_partner):
         try:
-            partner = self.env['res.partner'].search([('mo_edrpou', '=', edrpou_partner)])
+            partner = self.env['res.partner'].search([('mo_edrpou', '=',
+                                                       edrpou_partner)])
         except:
             partner = False
-        
+
         if partner:
             return partner.id
-        
+
         partner = self.env['res.partner'].search([('vat', '=', name_partner)])
         if partner:
             return partner.id
-        
+
         partner = self.env['res.partner'].search([('name', '=', name_partner)])
         return partner.id if partner else False
-    
+
     def parse(self, import_file, import_filename):
-        journal = self.env["account.journal"].browse(self.env.context.get("journal_id"))
+        journal = self.env["account.journal"].browse(
+            self.env.context.get("journal_id"))
         journal_acc_number = journal.bank_account_id.acc_number
-        
+
         if import_filename.lower().strip().endswith('.dbf'):
             statement = False
             try:
@@ -48,20 +49,25 @@ class AccountStatementImportPumbDbf(models.TransientModel):
                 table.open(dbf.READ_ONLY)
             except:
                 raise UserError(("Invalid file!"))
-            
+
             vals_list = []
             for row in table:
                 values = {}
                 if journal_acc_number == row.ACC_NUMB:
-                    amount = row.CR.strip() if row.DB.strip() == '' else '-'+row.DB.strip()
+                    amount = row.CR.strip() if row.DB.strip(
+                    ) == '' else '-' + row.DB.strip()
                     values.update({
-                        'date': row.DOC_DATE.replace('.','-'),
-                        'payment_ref': row.DESCRIPT.strip(),
-                        'partner_id': self.get_partner(row.KOR_OKPO.strip(),row.KOR_NAME.strip()),
-                        'amount': amount,
+                        'date':
+                        row.DOC_DATE.replace('.', '-'),
+                        'payment_ref':
+                        row.DESCRIPT.strip(),
+                        'partner_id':
+                        self.get_partner(row.KOR_OKPO.strip(),
+                                         row.KOR_NAME.strip()),
+                        'amount':
+                        amount,
                     })
                     vals_list.append((0, 0, values))
-            return vals_list            
+            return vals_list
         else:
-            raise ValidationError(("Unsupported File Type"))     
-        
+            raise ValidationError(("Unsupported File Type"))
