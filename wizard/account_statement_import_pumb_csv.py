@@ -56,7 +56,8 @@ class AccountStatementImportPumbCsv(models.TransientModel):
             for row in file_reader:
                 values = {}
                 if journal_acc_number == row['ACC_NUMB']:
-                    amount = row["CR"] if row["DB"] == '0.00' else '-' + row["DB"]
+                    #amount = row["CR"] if row["DB"] == '0.00' else '-' + row["DB"]
+                    amount = row["CR"] - row["DB"]
                     values.update({
                         'date':
                         row["DOC_DATE"].replace('.', '-'),
